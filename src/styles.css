@@ -1,0 +1,72 @@
+.bg {
+  background-blend-mode: luminosity;
+  background: #8080804d;
+  background-blend-mode: darken;
+  background: #4545452b;
+  backdrop-filter: blur(100px);
+}
+
+body {
+  box-sizing: border-box;
+  font-size: 15px;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 11px;
+  }
+}
+
+.text-shadow {
+  text-shadow: 0px 0px 17.4px 0px #495900a1;
+}
+
+.bg-card {
+  background-blend-mode: luminosity;
+  background: #8080804d;
+  background-blend-mode: darken;
+  background: #4545452b;
+  transition: all 0.3s;
+}
+
+.bg-card:hover {
+  backdrop-filter: blur(100px);
+  box-shadow: 0px 0px 7.2px 3px #ffacac42;
+  background-blend-mode: luminosity;
+  background: #8080804d;
+  background-blend-mode: darken;
+  background: #4545452b;
+  background: #ffffff21;
+}
+
+.bg-card-selected {
+  background-blend-mode: luminosity;
+  background: #8080804d;
+  background-blend-mode: darken;
+  background: #4545452b;
+  background: #fe5f3857;
+  border: 1px solid #fe5f38;
+  backdrop-filter: blur(100px);
+}
+
+@media (max-width: 768px) {
+  .bg {
+    background: url("./img/q_bg.png");
+    background-size: cover;
+    background-position: top;
+  }
+
+  .bg-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid #f9f2e0;
+    backdrop-filter: blur(50px);
+    border-radius: 10px;
+  }
+  .bg-card:hover {
+    border-radius: 10px;
+  }
+
+  .bg-card-selected {
+    border-radius: 10px;
+  }
+}
