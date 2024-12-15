@@ -1,9 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { StepFactory } from "./step-factory";
 import { type Step } from "./types";
-import { Transition } from "@headlessui/react";
-import { flushSync } from "react-dom";
-import { heightByStep, mobBgByStep, bgByStep } from "./utils";
+import { twMerge } from "tailwind-merge";
 
 let progress = {
   question_1: "12.5%",
@@ -17,7 +15,7 @@ let progress = {
 };
 
 export function Test() {
-  let [step, setStep] = React.useState<Step>("result_1");
+  let [step, setStep] = React.useState<Step>("start");
   let [res, setRes] = React.useState({
     result_1: 0,
     result_2: 0,
@@ -25,6 +23,19 @@ export function Test() {
     result_4: 0,
     result_5: 0,
   });
+
+  let arr = [
+    "question_1",
+    "question_2",
+    "question_3",
+    "question_4",
+    "question_5",
+    "question_6",
+    "question_7",
+    "question_8",
+  ];
+
+  let showProgress = arr.includes(step);
 
   function getLogo(step: Step) {
     if (
@@ -36,13 +47,34 @@ export function Test() {
       step === "result_5"
     ) {
       return (
-        <a
-          href="https://kentron.community/"
-          target="_blank"
-          className="absolute top-[50px] right-[50px] z-20 md:block hidden"
-        >
-          <img src="./img/logo-kentron.svg" alt="kentron" />
-        </a>
+        <>
+          <a
+            href="https://kentron.community/"
+            target="_blank"
+            className="absolute top-[50px]  2xl:right-[5vw] right-[50px] z-20 md:block hidden"
+          >
+            <img src="./img/logo-kentron.svg" alt="kentron" />
+          </a>
+          {showProgress ? (
+            <div className="absolute w-[30px] 2xl:right-[5vw] h-[190px] progress-bg flex-col gap-[10px] z-10 justify-center items-center right-[50px] top-1/2 -translate-y-1/2 md:flex hidden ">
+              {arr.map((item) => (
+                <div
+                  className={twMerge(
+                    " rounded-full transition-all duration-300 h-3 w-3 flex justify-center items-center",
+                    item === step ? "bg-[#FE5F38] " : ""
+                  )}
+                >
+                  <div
+                    className={twMerge(
+                      "h-2 w-2 rounded-full border border-[#FE5F38] transition-all duration-300",
+                      item === step ? "bg-[#FE5F38]" : ""
+                    )}
+                  ></div>
+                </div>
+              ))}
+            </div>
+          ) : null}
+        </>
       );
     }
 
@@ -53,24 +85,66 @@ export function Test() {
       step === "question_8"
     ) {
       return (
-        <a
-          href="https://kentron.community/"
-          target="_blank"
-          className="absolute top-[50px] right-[50px] z-20 md:block hidden"
-        >
-          <img src="./img/logo-mini.svg" alt="kentron" />
-        </a>
+        <>
+          <a
+            href="https://kentron.community/"
+            target="_blank"
+            className="absolute top-[50px] 2xl:right-[5vw]  right-[50px] z-20 md:block hidden"
+          >
+            <img src="./img/logo-mini.svg" alt="kentron" />
+          </a>
+          {showProgress ? (
+            <div className="absolute 2xl:right-[5vw] w-[30px] h-[190px] progress-bg flex-col gap-[10px] z-10 justify-center items-center right-[50px] top-1/2 -translate-y-1/2 md:flex hidden ">
+              {arr.map((item) => (
+                <div
+                  className={twMerge(
+                    " rounded-full transition-all duration-300 h-3 w-3 flex justify-center items-center",
+                    item === step ? "bg-[#FE5F38] " : ""
+                  )}
+                >
+                  <div
+                    className={twMerge(
+                      "h-2 w-2 rounded-full border border-[#FE5F38] transition-all duration-300",
+                      item === step ? "bg-[#FE5F38]" : ""
+                    )}
+                  ></div>
+                </div>
+              ))}
+            </div>
+          ) : null}
+        </>
       );
     }
 
     return (
-      <a
-        href="https://kentron.community/"
-        target="_blank"
-        className="absolute top-[50px] left-[50px] z-20 md:block hidden"
-      >
-        <img src="./img/logo-mini.svg" alt="kentron" />
-      </a>
+      <>
+        <a
+          href="https://kentron.community/"
+          target="_blank"
+          className="absolute top-[50px] 2xl:left-[5vw]  left-[50px] z-20 md:block hidden"
+        >
+          <img src="./img/logo-mini.svg" alt="kentron" />
+        </a>
+        {showProgress ? (
+          <div className="2xl:left-[5vw]  absolute w-[30px] h-[190px] progress-bg flex-col gap-[10px] z-10 justify-center items-center left-[50px] top-1/2 -translate-y-1/2 md:flex hidden ">
+            {arr.map((item) => (
+              <div
+                className={twMerge(
+                  " rounded-full transition-all duration-300 h-3 w-3 flex justify-center items-center",
+                  item === step ? "bg-[#FE5F38] " : ""
+                )}
+              >
+                <div
+                  className={twMerge(
+                    "h-2 w-2 rounded-full border border-[#FE5F38] transition-all duration-300",
+                    item === step ? "bg-[#FE5F38]" : ""
+                  )}
+                ></div>
+              </div>
+            ))}
+          </div>
+        ) : null}
+      </>
     );
   }
 

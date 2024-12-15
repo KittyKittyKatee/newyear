@@ -70,3 +70,11 @@ body {
     border-radius: 10px;
   }
 }
+
+.progress-bg {
+  background: linear-gradient(0deg, rgba(69, 69, 69, 0.17), rgba(69, 69, 69, 0.17)), rgba(128, 128, 128, 0.3);
+  background-blend-mode: darken, luminosity;
+  backdrop-filter: blur(50px);
+  border-radius: 20px;
+}
+
