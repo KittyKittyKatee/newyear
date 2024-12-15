@@ -17,7 +17,7 @@ let progress = {
 };
 
 export function Test() {
-  let [step, setStep] = React.useState<Step>("start");
+  let [step, setStep] = React.useState<Step>("result_1");
   let [res, setRes] = React.useState({
     result_1: 0,
     result_2: 0,

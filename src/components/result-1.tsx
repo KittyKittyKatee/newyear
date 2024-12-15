@@ -56,7 +56,7 @@ export function Result1({ step }: Props) {
           <a
             href="./img/result_upload/weekend_athlete.png"
             download
-            className="bg-[#FE5F38] md:h-[33px] h-[29px] rounded-full md:text-lg 2xl:text-xl 2xl:h-[38px] text-xs uppercase md:px-[10px] leading-none px-3 py-2 flex items-center w-fit"
+            className="bg-[#FE5F38] md:h-[33px] h-[29px] rounded-full md:text-lg 2xl:text-xl 2xl:h-[38px] text-xs uppercase md:px-[10px] leading-none px-3 pt-[1px] flex items-center w-fit"
           >
             скачать
           </a>

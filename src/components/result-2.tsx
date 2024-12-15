@@ -48,7 +48,7 @@ export function Result2({ step }: Props) {
           </p>
           <a
             href="./img/result_upload/eternal_student.png"
-            className="bg-[#FE5F38] md:h-[33px] h-[29px] 2xl:text-xl 2xl:h-[38px] rounded-full md:text-lg text-xs uppercase md:px-[10px] leading-none px-3 py-2 flex items-center w-fit"
+            className="bg-[#FE5F38] md:h-[33px] h-[29px] 2xl:text-xl 2xl:h-[38px] rounded-full md:text-lg text-xs uppercase md:px-[10px] leading-none px-3 pt-[1px] flex items-center w-fit"
             download
           >
             скачать

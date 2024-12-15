@@ -58,7 +58,7 @@ export function Start({ step, setStep }: Props) {
             праздничное настроение!
           </p>
           <button
-            className="bg-[#FE5F38] 2xl:text-xl 2xl:h-[38px] md:h-[33px] h-[29px] rounded-full md:text-lg text-xs uppercase md:px-[10px] px-3"
+            className="bg-[#FE5F38] pt-[2px] 2xl:text-xl 2xl:h-[38px] md:h-[33px] h-[29px] rounded-full md:text-lg text-xs uppercase md:px-[10px] px-3"
             type="button"
             onClick={() => setStep("question_1")}
           >
