@@ -23,6 +23,7 @@ export function Result2({ step }: Props) {
             className="h-full w-full object-center object-cover"
             src={mobBgByStep[step]}
             alt=""
+            fetchPriority="high"
           />
           {logoMob}
         </div>
@@ -57,6 +58,7 @@ export function Result2({ step }: Props) {
           className="w-full h-full object-cover absolute inset-0 min-h-[100svh] md:block hidden"
           src={bgByStep[step]}
           alt=""
+          fetchPriority="high"
         />
       </div>
     </Transition>

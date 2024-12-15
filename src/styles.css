@@ -51,7 +51,7 @@ body {
 
 @media (max-width: 768px) {
   .bg {
-    background: url("./img/q_bg.png");
+    background: url("/img/q_bg.png");
     background-size: cover;
     background-position: top;
   }
