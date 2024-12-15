@@ -2,13 +2,15 @@ import { Transition } from "@headlessui/react";
 import React from "react";
 import { twMerge } from "tailwind-merge";
 import { type ResultType, type Step } from "./types";
+import { bgByStep, getLogoMob, heightByStep, mobBgByStep } from "./utils";
 
 type Props = {
   setStep: (step: Step) => void;
   setRes: any;
+  step: Step;
 };
 
-export function Question3({ setStep, setRes }: Props) {
+export function Question3({ setStep, setRes, step }: Props) {
   let [selected, setSelected] = React.useState<number | null>(null);
 
   const [open, setOpen] = React.useState(false);
@@ -16,11 +18,23 @@ export function Question3({ setStep, setRes }: Props) {
   React.useEffect(() => {
     setOpen(true);
   }, []);
-
+  let logoMob = getLogoMob(step);
   return (
     <Transition show={open} appear={true}>
-      <div className="transition duration-300 ease-in data-[closed]:opacity-0">
-        <div className="bg md:absolute z-10 md:max-w-[533px] 2xl:right-[5vw] 2xl:max-w-[627px] right-[50px] max-w-[335px] mx-auto 2xl:top-[10vh] top-[100px] md:py-7 py-[18px] md:px-8 px-[18px] rounded-[20px] text-white">
+      <div className="transition duration-500 ease-in data-[closed]:opacity-0 mx-auto w-fit">
+        <div
+          className="w-full md:hidden rounded-2xl mb-2.5 overflow-hidden relative max-w-[335px]"
+          style={{ height: heightByStep[step] }}
+        >
+          <img
+            className="h-full w-full object-center object-cover"
+            src={mobBgByStep[step]}
+            alt=""
+          />
+          {logoMob}
+        </div>
+
+        <div className="bg md:absolute z-10 md:max-w-[533px] 2xl:right-[5vw] 2xl:max-w-[627px] right-[50px] max-w-[335px]  2xl:top-[10vh] top-[100px] md:py-7 py-[18px] md:px-8 px-[18px] rounded-[20px] text-white">
           <h1 className="font-dudka md:text-[33px] 2xl:text-[40px] 2xl:leading-[43px] text-[19px] md:mb-6 mb-4 md:leading-[32px] leading-[20px] text-shadow">
             Какая причина чаще всего мешает тебе достигать целей?
           </h1>
@@ -116,6 +130,11 @@ export function Question3({ setStep, setRes }: Props) {
             </button>
           </div>
         </div>
+        <img
+          className="w-full h-full object-cover absolute inset-0 min-h-[100svh] md:block hidden"
+          src={bgByStep[step]}
+          alt=""
+        />
       </div>
     </Transition>
   );
