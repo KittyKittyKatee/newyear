@@ -51,7 +51,7 @@ export function Test() {
           <a
             href="https://kentron.community/"
             target="_blank"
-            className="absolute top-[50px]  2xl:right-[5vw] right-[50px] z-20 md:block hidden"
+            className="absolute top-[50px] w-[167px] 2xl:right-[5vw] right-[50px] z-20 md:block hidden"
           >
             <img src="./img/logo-kentron.svg" alt="kentron" />
           </a>
@@ -89,9 +89,9 @@ export function Test() {
           <a
             href="https://kentron.community/"
             target="_blank"
-            className="absolute top-[50px] 2xl:right-[5vw]  right-[50px] z-20 md:block hidden"
+            className="absolute top-[50px] 2xl:right-[5vw]  right-[50px] z-20 md:block hidden w-[68px]"
           >
-            <img src="./img/logo-mini.svg" alt="kentron" />
+            <img className="w-[68px]" src="./img/logo-mini.svg" alt="kentron" />
           </a>
           {showProgress ? (
             <div className="absolute 2xl:right-[5vw] w-[30px] h-[190px] progress-bg flex-col gap-[10px] z-10 justify-center items-center right-[50px] top-1/2 -translate-y-1/2 md:flex hidden ">
@@ -121,9 +121,9 @@ export function Test() {
         <a
           href="https://kentron.community/"
           target="_blank"
-          className="absolute top-[50px] 2xl:left-[5vw]  left-[50px] z-20 md:block hidden"
+          className="absolute top-[50px] 2xl:left-[5vw]  left-[50px] z-20 md:block hidden w-[68px]"
         >
-          <img src="./img/logo-mini.svg" alt="kentron" />
+          <img className="w-[68px]" src="./img/logo-mini.svg" alt="kentron" />
         </a>
         {showProgress ? (
           <div className="2xl:left-[5vw]  absolute w-[30px] h-[190px] progress-bg flex-col gap-[10px] z-10 justify-center items-center left-[50px] top-1/2 -translate-y-1/2 md:flex hidden ">
